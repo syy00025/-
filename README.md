@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,14 +8,14 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center; /* Center horizontally */
+            justify-content: center;
             align-items: flex-start; /* Align to the top */
             min-height: 100vh;
             background: #f5f5f5;
         }
         .container {
             display: flex;
-            align-items: flex-start;
+            align-items: center; /* Center vertically within the container */
             font-family: Arial, sans-serif;
             transform: scale(0.6); /* Keep the 60% scale */
             transform-origin: top center;
@@ -39,8 +40,8 @@
         }
         /* Analog Clock Styles */
         .analog-clock {
-            width: 120px;
-            height: 144px;
+            width: 144px; /* Match the height to make it round */
+            height: 144px; /* Already at 144px */
             background: linear-gradient(135deg, #dfe4ea, #ced6e0);
             border-radius: 50%;
             position: relative;
