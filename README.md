@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Clock and Calendar</title>
+    <title>Creative Clock and Calendar</title>
     <style>
         .container {
             text-align: center;
@@ -11,11 +11,11 @@
         .clock {
             width: 200px;
             height: 200px;
-            background: #f0f0f0;
+            background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Gradient background */
             border-radius: 50%;
             position: relative;
-            border: 10px solid #333;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            border: 8px solid #2c3e50;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
             margin: 20px auto;
         }
         .hand {
@@ -23,37 +23,42 @@
             bottom: 50%;
             left: 50%;
             transform-origin: bottom;
-            background: #333;
+            background: #2c3e50;
         }
         .hour-hand {
             width: 6px;
-            height: 60px;
+            height: 50px;
+            border-radius: 3px;
         }
         .minute-hand {
             width: 4px;
-            height: 80px;
+            height: 70px;
+            border-radius: 2px;
         }
         .second-hand {
             width: 2px;
-            height: 90px;
-            background: #ff4444;
+            height: 85px;
+            background: #e74c3c; /* Vibrant red */
+            border-radius: 1px;
         }
         .center {
-            width: 10px;
-            height: 10px;
-            background: #333;
+            width: 12px;
+            height: 12px;
+            background: #2c3e50;
             border-radius: 50%;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
-        .number {
+        .marker {
             position: absolute;
-            font-size: 18px;
-            color: #333;
-            text-align: center;
-            width: 20px;
+            width: 8px;
+            height: 8px;
+            background: #3498db; /* Blue glowing dots */
+            border-radius: 50%;
+            box-shadow: 0 0 5px #3498db, 0 0 10px #3498db;
         }
         /* Calendar Styles */
         .calendar {
@@ -64,6 +69,7 @@
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 10px;
+            color: #2c3e50;
         }
         table {
             border-collapse: collapse;
@@ -77,14 +83,14 @@
             border: 1px solid #ddd;
         }
         th {
-            background: #333;
+            background: #2c3e50;
             color: #fff;
         }
         td {
             background: #f9f9f9;
         }
         .today {
-            background: #ff4444;
+            background: #e74c3c;
             color: #fff;
             font-weight: bold;
         }
@@ -98,10 +104,19 @@
             <div class="hand minute-hand"></div>
             <div class="hand second-hand"></div>
             <div class="center"></div>
-            <div class="number" style="top: 10px; left: 50%; transform: translateX(-50%);">12</div>
-            <div class="number" style="bottom: 10px; left: 50%; transform: translateX(-50%);">6</div>
-            <div class="number" style="top: 50%; right: 10px; transform: translateY(-50%);">3</div>
-            <div class="number" style="top: 50%; left: 10px; transform: translateY(-50%);">9</div>
+            <!-- Hour Markers (12 dots) -->
+            <div class="marker" style="top: 10px; left: 50%; transform: translateX(-50%);"></div>
+            <div class="marker" style="top: 20px; right: 20%; transform: translateY(-50%);"></div>
+            <div class="marker" style="top: 50%; right: 10px; transform: translateY(-50%);"></div>
+            <div class="marker" style="bottom: 20%; right: 20px; transform: translateY(50%);"></div>
+            <div class="marker" style="bottom: 10px; left: 50%; transform: translateX(-50%);"></div>
+            <div class="marker" style="bottom: 20%; left: 20px; transform: translateY(50%);"></div>
+            <div class="marker" style="top: 50%; left: 10px; transform: translateY(-50%);"></div>
+            <div class="marker" style="top: 20%; left: 20px; transform: translateY(-50%);"></div>
+            <div class="marker" style="top: 20%; right: 60%; transform: translateY(-50%);"></div>
+            <div class="marker" style="top: 20%; left: 60%; transform: translateY(-50%);"></div>
+            <div class="marker" style="bottom: 20%; right: 60%; transform: translateY(50%);"></div>
+            <div class="marker" style="bottom: 20%; left: 60%; transform: translateY(50%);"></div>
         </div>
 
         <!-- Calendar -->
@@ -153,7 +168,7 @@
             calendarBody.innerHTML = '';
 
             let date = 1;
-            for (let i = 0; i < 6; i++) { // Max 6 weeks
+            for (let i = 0; i < 6; i++) {
                 let row = document.createElement('tr');
                 for (let j = 0; j < 7; j++) {
                     let cell = document.createElement('td');
