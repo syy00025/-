@@ -1,8 +1,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Creative Clock and Calendar</title>
+    <!-- Removed <title> tag to prevent "clock-widget" from showing -->
     <style>
+        body {
+            margin: 0; /* Remove default margins */
+            padding: 0; /* Remove default padding */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure full viewport height */
+            background: #f5f5f5; /* Light background for better contrast */
+        }
         .container {
             text-align: center;
             font-family: Arial, sans-serif;
@@ -11,7 +20,7 @@
         .clock {
             width: 200px;
             height: 200px;
-            background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Gradient background */
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
             border-radius: 50%;
             position: relative;
             border: 8px solid #2c3e50;
@@ -38,7 +47,7 @@
         .second-hand {
             width: 2px;
             height: 85px;
-            background: #e74c3c; /* Vibrant red */
+            background: #e74c3c;
             border-radius: 1px;
         }
         .center {
@@ -56,7 +65,7 @@
             position: absolute;
             width: 8px;
             height: 8px;
-            background: #3498db; /* Blue glowing dots */
+            background: #3498db;
             border-radius: 50%;
             box-shadow: 0 0 5px #3498db, 0 0 10px #3498db;
         }
@@ -158,42 +167,4 @@
             const today = now.getDate();
 
             const months = ["January", "February", "March", "April", "May", "June", 
-                          "July", "August", "September", "October", "November", "December"];
-            document.getElementById('month-year').textContent = `${months[month]} ${year}`;
-
-            const firstDay = new Date(year, month, 1).getDay();
-            const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-            let calendarBody = document.getElementById('calendar-body');
-            calendarBody.innerHTML = '';
-
-            let date = 1;
-            for (let i = 0; i < 6; i++) {
-                let row = document.createElement('tr');
-                for (let j = 0; j < 7; j++) {
-                    let cell = document.createElement('td');
-                    if (i === 0 && j < firstDay) {
-                        cell.textContent = '';
-                    } else if (date > daysInMonth) {
-                        break;
-                    } else {
-                        cell.textContent = date;
-                        if (date === today) {
-                            cell.classList.add('today');
-                        }
-                        date++;
-                    }
-                    row.appendChild(cell);
-                }
-                calendarBody.appendChild(row);
-                if (date > daysInMonth) break;
-            }
-        }
-
-        // Initial calls and updates
-        setInterval(updateClock, 1000);
-        updateClock();
-        generateCalendar();
-    </script>
-</body>
-</html>
+                          "July", "August", "September", "October
