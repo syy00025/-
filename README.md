@@ -79,14 +79,6 @@
             transform: translate(-50%, -50%);
             box-shadow: 0 0 5px rgba(0,0,0,0.5);
         }
-        .marker {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: #3498db;
-            border-radius: 50%;
-            box-shadow: 0 0 3px #3498db;
-        }
         /* Calendar Styles */
         .calendar {
             display: inline-block;
@@ -135,19 +127,6 @@
                 <div class="hand minute-hand"></div>
                 <div class="hand second-hand"></div>
                 <div class="center"></div>
-                <!-- Hour Markers (12 dots) -->
-                <div class="marker" style="top: 5px; left: 50%; transform: translateX(-50%);"></div>
-                <div class="marker" style="top: 10px; right: 15%; transform: translateY(-50%);"></div>
-                <div class="marker" style="top: 50%; right: 5px; transform: translateY(-50%);"></div>
-                <div class="marker" style="bottom: 15%; right: 10px; transform: translateY(50%);"></div>
-                <div class="marker" style="bottom: 5px; left: 50%; transform: translateX(-50%);"></div>
-                <div class="marker" style="bottom: 15%; left: 10px; transform: translateY(50%);"></div>
-                <div class="marker" style="top: 50%; left: 5px; transform: translateY(-50%);"></div>
-                <div class="marker" style="top: 15%; left: 10px; transform: translateY(-50%);"></div>
-                <div class="marker" style="top: 15%; right: 40%; transform: translateY(-50%);"></div>
-                <div class="marker" style="top: 15%; left: 40%; transform: translateY(-50%);"></div>
-                <div class="marker" style="bottom: 15%; right: 40%; transform: translateY(50%);"></div>
-                <div class="marker" style="bottom: 15%; left: 40%; transform: translateY(50%);"></div>
             </div>
         </div>
 
