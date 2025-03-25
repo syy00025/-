@@ -7,8 +7,8 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: center; /* Center horizontally */
+            align-items: flex-start; /* Align to the top */
             min-height: 100vh;
             background: #f5f5f5;
         }
@@ -16,8 +16,8 @@
             display: flex;
             align-items: flex-start;
             font-family: Arial, sans-serif;
-            transform: scale(0.6); /* Reduce size to 60% */
-            transform-origin: top center; /* Scale from the top to avoid shifting */
+            transform: scale(0.6); /* Keep the 60% scale */
+            transform-origin: top center;
         }
         /* Clock Container (Digital + Analog) */
         .clock-container {
@@ -28,19 +28,19 @@
         }
         /* Digital Clock Styles */
         .digital-clock {
-            font-size: 48px;
+            font-size: 58px;
             font-family: 'Courier New', monospace;
             color: #2c3e50;
             background: #ecf0f1;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         /* Analog Clock Styles */
         .analog-clock {
             width: 120px;
-            height: 120px;
+            height: 144px;
             background: linear-gradient(135deg, #dfe4ea, #ced6e0);
             border-radius: 50%;
             position: relative;
@@ -56,17 +56,17 @@
         }
         .hour-hand {
             width: 4px;
-            height: 30px;
+            height: 36px;
             border-radius: 2px;
         }
         .minute-hand {
             width: 3px;
-            height: 40px;
+            height: 48px;
             border-radius: 1.5px;
         }
         .second-hand {
             width: 1px;
-            height: 45px;
+            height: 54px;
             background: #e74c3c;
             border-radius: 0.5px;
         }
@@ -87,9 +87,9 @@
             text-align: center;
         }
         .month {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: #2c3e50;
         }
         table {
@@ -99,7 +99,7 @@
         }
         th, td {
             width: 40px;
-            height: 40px;
+            height: 48px;
             text-align: center;
             border: 1px solid #ddd;
         }
