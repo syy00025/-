@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title> <!-- Empty title to prevent "clock-widget" from showing -->
+    <title>Time Display</title> <!-- Set a custom title -->
     <style>
         body {
             margin: 0;
