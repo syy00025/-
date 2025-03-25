@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Time Display</title> <!-- Set a custom title -->
+    <title>Time Display</title> <!-- Custom title to avoid "clock-widget" -->
     <style>
         body {
             margin: 0;
@@ -13,17 +13,18 @@
             background: #f5f5f5;
         }
         .container {
-            text-align: center;
+            display: flex;
+            align-items: flex-start;
             font-family: Arial, sans-serif;
+            transform: scale(0.6); /* Reduce size to 60% */
+            transform-origin: top center; /* Scale from the top to avoid shifting */
+        }
+        /* Clock Container (Digital + Analog) */
+        .clock-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-        .clock-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
+            margin-left: 20px;
         }
         /* Digital Clock Styles */
         .digital-clock {
@@ -34,7 +35,7 @@
             padding: 10px 20px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            margin-right: 20px;
+            margin-bottom: 10px;
         }
         /* Analog Clock Styles */
         .analog-clock {
@@ -83,7 +84,7 @@
         /* Calendar Styles */
         .calendar {
             display: inline-block;
-            margin-top: 20px;
+            text-align: center;
         }
         .month {
             font-size: 20px;
@@ -118,20 +119,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- Clock Section -->
-        <div class="clock-container">
-            <!-- Digital Clock -->
-            <div class="digital-clock" id="digital-time"></div>
-            <!-- Analog Clock -->
-            <div class="analog-clock">
-                <div class="hand hour-hand"></div>
-                <div class="hand minute-hand"></div>
-                <div class="hand second-hand"></div>
-                <div class="center"></div>
-            </div>
-        </div>
-
-        <!-- Calendar -->
+        <!-- Calendar on the Left -->
         <div class="calendar">
             <div class="month" id="month-year"></div>
             <table>
@@ -142,6 +130,19 @@
                 </thead>
                 <tbody id="calendar-body"></tbody>
             </table>
+        </div>
+
+        <!-- Clock Section on the Right -->
+        <div class="clock-container">
+            <!-- Digital Clock -->
+            <div class="digital-clock" id="digital-time"></div>
+            <!-- Analog Clock -->
+            <div class="analog-clock">
+                <div class="hand hour-hand"></div>
+                <div class="hand minute-hand"></div>
+                <div class="hand second-hand"></div>
+                <div class="center"></div>
+            </div>
         </div>
     </div>
 
